@@ -13,6 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.envers.AuditOverride;
 
 @Entity
@@ -20,6 +21,7 @@ import org.hibernate.envers.AuditOverride;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
 @AuditOverride(forClass = BaseEntity.class) // createdAt, UpdatedAt 자동 변경 위함.
 public class Customer extends BaseEntity{
     @Id
