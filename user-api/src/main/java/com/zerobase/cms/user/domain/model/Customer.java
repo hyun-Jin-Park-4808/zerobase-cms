@@ -31,6 +31,7 @@ public class Customer extends BaseEntity{
 
     @Column(unique = true)
     private String email;
+
     private String name;
     private String password;
     private String phone;

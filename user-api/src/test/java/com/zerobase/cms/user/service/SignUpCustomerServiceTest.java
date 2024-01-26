@@ -1,7 +1,5 @@
 package com.zerobase.cms.user.service;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.zerobase.cms.user.domain.SignUpForm;
 import com.zerobase.cms.user.domain.model.Customer;
 import java.time.LocalDate;

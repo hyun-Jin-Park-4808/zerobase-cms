@@ -1,4 +1,4 @@
-package com.zerobase.cms;
+package com.zerobase.cms.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
