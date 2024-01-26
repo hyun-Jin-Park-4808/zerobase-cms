@@ -1,14 +1,10 @@
 package com.zerobase.cms.user.service;
 
-import static com.zerobase.cms.user.exception.ErrorCode.ALREADY_VERIFY;
-import static com.zerobase.cms.user.exception.ErrorCode.EXPIRED_CODE;
-import static com.zerobase.cms.user.exception.ErrorCode.NOT_FOUND_USER;
-import static com.zerobase.cms.user.exception.ErrorCode.WRONG_VERIFICATION;
-
 import com.zerobase.cms.user.domain.SignUpForm;
 import com.zerobase.cms.user.domain.model.Customer;
 import com.zerobase.cms.user.domain.repository.CustomerRepository;
 import com.zerobase.cms.user.exception.CustomException;
+import com.zerobase.cms.user.exception.ErrorCode;
 import java.time.LocalDateTime;
 import java.util.Locale;
 import lombok.RequiredArgsConstructor;
@@ -32,7 +28,7 @@ public class SignUpCustomerService {
     @Transactional
     public LocalDateTime ChangeCustomerValidateEmail(Long customerId, String verificationCode) {
         Customer customer = customerRepository.findById(customerId)
-                .orElseThrow(() -> new CustomException(NOT_FOUND_USER));
+                .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_USER));
         customer.setVerificationCode(verificationCode);
         customer.setVerifyExpiredAt(LocalDateTime.now().plusDays(1));
         return customer.getVerifyExpiredAt();
@@ -41,15 +37,15 @@ public class SignUpCustomerService {
     @Transactional
     public void verifyEmail(String email, String code) {
         Customer customer = customerRepository.findByEmail(email)
-                .orElseThrow(() -> new CustomException(NOT_FOUND_USER));
+                .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_USER));
         if (customer.isVerify()) {
-            throw new CustomException(ALREADY_VERIFY);
+            throw new CustomException(ErrorCode.ALREADY_VERIFY);
         }
         else if (!customer.getVerificationCode().equals(code)) {
-            throw new CustomException(WRONG_VERIFICATION);
+            throw new CustomException(ErrorCode.WRONG_VERIFICATION);
         }
         else if (customer.getVerifyExpiredAt().isBefore(LocalDateTime.now())) {
-            throw new CustomException(EXPIRED_CODE);
+            throw new CustomException(ErrorCode.EXPIRED_CODE);
         }
         customer.setVerify(true);
     }
