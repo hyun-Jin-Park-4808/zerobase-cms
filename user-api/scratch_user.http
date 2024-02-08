@@ -53,7 +53,7 @@ Content-Type: application/json
 }
 
 ### 이메일 인증 (셀러)
-GET http://localhost:8081/signup/seller/verify?email=guswlsdl4808@gmail.com&code=F4ilXLVqev
+GET http://localhost:8081/signup/seller/verify?email=guswlsdl4808@gmail.com&code=67Vkm2soYC
 
 ### 로그인 (셀러)
 POST http://localhost:8081/signIn/seller
