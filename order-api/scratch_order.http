@@ -1,7 +1,7 @@
 ### 상품 등록 (셀러)
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3Mzk4NzQwLCJleHAiOjE3MDc0ODUxNDB9.-qzXJXhiygMh8MpwvTYud802TovyBORLjifim8HS6E0
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3NDQzNTY4LCJleHAiOjE3MDc1Mjk5Njh9.NP9ivNyKu4n3rLfxsQoIKLE8hxgo8YQADkS9EsWoSyI
 
 {
   "description": "상품 설명",
@@ -18,11 +18,42 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqM
 ### 상품 아이템 등록 (셀러)
 POST http://localhost:8082/seller/product/item
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3Mzk4NzQwLCJleHAiOjE3MDc0ODUxNDB9.-qzXJXhiygMh8MpwvTYud802TovyBORLjifim8HS6E0
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3NDQzNTY4LCJleHAiOjE3MDc1Mjk5Njh9.NP9ivNyKu4n3rLfxsQoIKLE8hxgo8YQADkS9EsWoSyI
 
 {
   "productId": 1,
   "count": 1,
   "name": "280",
+  "price": 100000
+}
+
+### 상품 수정 (셀러)
+PUT http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3NDQzNTY4LCJleHAiOjE3MDc1Mjk5Njh9.NP9ivNyKu4n3rLfxsQoIKLE8hxgo8YQADkS9EsWoSyI
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "id": 1,
+      "count": 1,
+      "name": "280",
+      "price": 100000
+    }
+  ],
+  "id": 1,
+  "name": "나이키 에어포스 한정판"
+}
+
+### 상품 아이템 수정 (셀러)
+PUT http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3NDQzNTY4LCJleHAiOjE3MDc1Mjk5Njh9.NP9ivNyKu4n3rLfxsQoIKLE8hxgo8YQADkS9EsWoSyI
+
+{
+  "id": 1,
+  "count": 1,
+  "name": "260",
   "price": 100000
 }
