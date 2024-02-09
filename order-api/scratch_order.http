@@ -12,7 +12,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqM
       "price": 100000
     }
   ],
-  "name": "나이키 에어포스2"
+  "name": "나이키 에어포스1"
 }
 
 ### 상품 아이템 등록 (셀러)
@@ -63,8 +63,17 @@ DELETE http://localhost:8082/seller/product?id=2
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3NDQzNTY4LCJleHAiOjE3MDc1Mjk5Njh9.NP9ivNyKu4n3rLfxsQoIKLE8hxgo8YQADkS9EsWoSyI
 
-
 ### 상품 아이템 삭제 (셀러)
 DELETE http://localhost:8082/seller/product/item?id=4
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3NDQzNTY4LCJleHAiOjE3MDc1Mjk5Njh9.NP9ivNyKu4n3rLfxsQoIKLE8hxgo8YQADkS9EsWoSyI
+
+### 상품 검색
+GET http://localhost:8082/search/product?name=나이키
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3NDQzNTY4LCJleHAiOjE3MDc1Mjk5Njh9.NP9ivNyKu4n3rLfxsQoIKLE8hxgo8YQADkS9EsWoSyI
+
+### 상품 디테일 검색
+GET http://localhost:8082/search/product/detail?productId=1
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3NDQzNTY4LCJleHAiOjE3MDc1Mjk5Njh9.NP9ivNyKu4n3rLfxsQoIKLE8hxgo8YQADkS9EsWoSyI

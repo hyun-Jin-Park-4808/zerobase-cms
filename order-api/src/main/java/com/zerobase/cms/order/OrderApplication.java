@@ -9,7 +9,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 //@ServletComponentScan
-@EnableJpaRepositories(repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
+@EnableJpaRepositories(
+        repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class,
+        basePackages = "com.zerobase.cms.order"
+)
 @EnableJpaAuditing
 @EnableFeignClients
 @SpringBootApplication
