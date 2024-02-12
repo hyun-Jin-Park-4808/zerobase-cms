@@ -1,7 +1,8 @@
 ### 상품 등록 (셀러)
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3NDQzNTY4LCJleHAiOjE3MDc1Mjk5Njh9.NP9ivNyKu4n3rLfxsQoIKLE8hxgo8YQADkS9EsWoSyI
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3MDc3MzQxMTAsImV4cCI6MTcwNzgyMDUxMH0.kpbOmyPBQV3hhodwPdLgi9Oo3LDvlAfvhfrzG6_yvfU
+
 
 {
   "description": "상품 설명",
@@ -77,3 +78,23 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqM
 GET http://localhost:8082/search/product/detail?productId=1
 Content-Type: application/json
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzA3NDQzNTY4LCJleHAiOjE3MDc1Mjk5Njh9.NP9ivNyKu4n3rLfxsQoIKLE8hxgo8YQADkS9EsWoSyI
+
+### 카트 추가
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLRmx2NWFCdHUzb2lHV0tVcVFSNCt1ZmVqMS96NCtaR0pZQm4yZHA2d2dzPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3MDc3MzQ5NDQsImV4cCI6MTcwNzgyMTM0NH0.W6nM4TpmbjWrWXQIHlwOB56o97MW5gbGgDdVZu0vk4E
+
+{
+  "description": "상품 설명",
+  "id": 1,
+  "items": [
+    {
+      "count": 1,
+      "id": 1,
+      "name": "270",
+      "price": 100000
+    }
+  ],
+  "name": "나이키 에어포스1",
+  "sellerId": 1
+}
